@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: #F5F0E8;
+    color: #3A2518;
+    line-height: 1.8;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  .content-section {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .content-section h2 {
+    @apply text-2xl font-bold text-ink-700 mt-12 mb-6 pb-3 border-b-2 border-ink-200;
+  }
+
+  .content-section h3 {
+    @apply text-xl font-semibold text-ink-700 mt-8 mb-4;
+  }
+
+  .content-section h4 {
+    @apply text-lg font-semibold text-ink-600 mt-6 mb-3;
+  }
+
+  .content-section p {
+    @apply mb-4 text-ink-800 leading-relaxed;
+  }
+
+  .content-section ul, .content-section ol {
+    @apply mb-4 pl-6 space-y-2;
+  }
+
+  .content-section ul {
+    @apply list-disc;
+  }
+
+  .content-section ol {
+    @apply list-decimal;
+  }
+
+  .content-section li {
+    @apply text-ink-800 leading-relaxed;
+  }
+
+  .content-section blockquote {
+    @apply border-l-4 border-gold-400 bg-ink-100/50 py-3 px-6 my-6 italic text-ink-700 rounded-r-lg;
+  }
+
+  .content-section blockquote p {
+    @apply mb-0;
+  }
+
+  .content-section table {
+    @apply w-full mb-6 border-collapse;
+  }
+
+  .content-section table th {
+    @apply bg-ink-700 text-ink-50 px-4 py-3 text-left font-medium;
+  }
+
+  .content-section table td {
+    @apply px-4 py-3 border-b border-ink-200 text-ink-800;
+  }
+
+  .content-section table tr:nth-child(even) td {
+    @apply bg-ink-100/30;
+  }
+
+  .content-section table tr:hover td {
+    @apply bg-ink-100/60;
+  }
+
+  .content-section pre {
+    @apply bg-ink-800 text-ink-50 rounded-lg p-4 my-6 overflow-x-auto text-sm leading-relaxed;
+  }
+
+  .content-section code {
+    @apply font-mono text-sm;
+  }
+
+  .content-section hr {
+    @apply my-8 border-ink-200;
+  }
+
+  .content-section strong {
+    @apply font-bold text-ink-700;
+  }
+
+  .content-section img {
+    @apply rounded-lg shadow-md my-6 w-full;
+  }
+
+  .chapter-card {
+    @apply bg-white rounded-xl p-6 shadow-md border border-ink-100 hover:shadow-lg transition-all duration-300;
+  }
+
+  .sidebar-link {
+    @apply block px-4 py-2 rounded-lg text-ink-600 hover:bg-ink-100 hover:text-ink-700 transition-colors duration-200 text-sm;
+  }
+
+  .sidebar-link.active {
+    @apply bg-ink-700 text-ink-50;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-ink-300 rounded-full;
+  }
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Decorative class */
+.decorative-line {
+  @apply h-1 w-20 bg-gold-400 rounded-full my-6;
+}
